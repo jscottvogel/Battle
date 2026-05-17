@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Battlezone</title>
+  <title>Tank Battle</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
     
@@ -190,7 +190,7 @@
 </head>
 <body>
 
-  <div id="title-bar">BATTLEZONE</div>
+  <div id="title-bar">TANK BATTLE</div>
 
   <div id="game-container">
     <canvas id="canvas" width="640" height="400"></canvas>
@@ -198,7 +198,7 @@
     <div id="flash-overlay"></div>
     
     <div id="overlay">
-      <h1 id="overlay-title">BATTLEZONE</h1>
+      <h1 id="overlay-title">TANK BATTLE</h1>
       <div id="overlay-content" class="instructions">
         WASD / ARROWS to Move & Turn<br>
         SPACEBAR to Fire<br>
@@ -375,7 +375,7 @@
   }
 
   // --- High Scores ---
-  let highScores = JSON.parse(localStorage.getItem('battlezoneHighScores')) || [
+  let highScores = JSON.parse(localStorage.getItem('tankbattleHighScores')) || [
     { name: 'AI1', score: 5000 },
     { name: 'AI2', score: 4000 },
     { name: 'AI3', score: 3000 },
@@ -422,7 +422,7 @@
     highScores.push({ name: initials, score: player.score });
     highScores.sort((a, b) => b.score - a.score);
     highScores = highScores.slice(0, 5);
-    localStorage.setItem('battlezoneHighScores', JSON.stringify(highScores));
+    localStorage.setItem('tankbattleHighScores', JSON.stringify(highScores));
     
     hsEntry.classList.add('hidden');
     showHighScores();
